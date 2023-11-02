@@ -1,7 +1,8 @@
 <?php
 
-namespace Creode\CollapsibleRadios;
+namespace Creode\CollapsibleRadios\Field;
 
+use Creode\CollapsibleRadios\RadioHelper;
 use Laravel\Nova\Fields\Field;
 
 class CollapsibleRadios extends Field
@@ -32,7 +33,10 @@ class CollapsibleRadios extends Field
      */
     public function options($options)
     {
-        $this->optionsCallback = $options;
+        $radioHelper = app(RadioHelper::class);
+        $structuredOptions = $radioHelper::createMultidimensionalStructure($options);
+
+        $this->optionsCallback = $structuredOptions;
 
         return $this;
     }
