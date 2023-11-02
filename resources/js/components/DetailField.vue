@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import buildHierarchyPath from '../heirarchyHelper.js';
+import {buildHierarchyPath} from '../heirarchyHelper.js';
 
 export default {
   props: ['index', 'resource', 'resourceName', 'resourceId', 'field'],

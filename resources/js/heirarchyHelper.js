@@ -36,4 +36,6 @@ var buildHierarchyPath = function(roots, id) {
     return path.join(' / ');
 };
 
-export default buildHierarchyPath;
+export {
+    buildHierarchyPath
+}

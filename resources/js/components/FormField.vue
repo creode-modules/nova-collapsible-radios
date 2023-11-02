@@ -88,10 +88,6 @@ export default {
         }
       });
     },
-
-    expandParent(parentId) {
-
-    }
   },
 }
 </script>

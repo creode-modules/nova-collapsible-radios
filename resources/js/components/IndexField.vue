@@ -4,7 +4,7 @@
 
 <script>
 
-import buildHierarchyPath from '../heirarchyHelper.js';
+import {buildHierarchyPath} from '../heirarchyHelper.js';
 
 export default {
   props: ['resourceName', 'field'],
