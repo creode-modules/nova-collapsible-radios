@@ -112,4 +112,12 @@ export default {
     .radio-list__toggle-button {
       display: block;
     }
+
+    .w-5 {
+        width: 1.25rem;
+    }
+
+    .h-5 {
+        height: 1.25rem;
+    }
 </style>
