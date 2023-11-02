@@ -7,7 +7,7 @@ Contains a new Laravel Nova field for building collapsible radios for parent and
 You can install the package via composer:
 
 ```bash
-composer require creode/nova-collapsible-radios
+composer require creode/collapsible-radios
 ```
 
 ## Usage
