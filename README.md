@@ -2,7 +2,7 @@
 
 Contains a new Laravel Nova field for building collapsible radios for parent and child relationships.
 
-![Field in use](https://github.com/creode-modules/nova-collapsible-radios/blob/main/docs/images/folder-example.png?raw=true, 'Image of hierarchy showing the field in use.')
+![Field in use](https://github.com/creode-modules/nova-collapsible-radios/blob/1.x/docs/images/folder-example.png?raw=true, 'Image of hierarchy showing the field in use.')
 
 ## Installation
 
