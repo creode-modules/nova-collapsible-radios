@@ -7,12 +7,13 @@ class RadioHelper
     /**
      * Create a multidimensional structure from a flat collection.
      *
-     * @param array $items
-     * @param int $parentId
+     * @param array $items    The flat collection.
+     * @param ?int  $parentId The parent ID.
      *
      * @return \Illuminate\Support\Collection
      */
-    public static function createMultidimensionalStructure($items, $parentId = null) {
+    public static function createMultidimensionalStructure($items, $parentId = null)
+    {
         $branch = collect();
 
         foreach ($items as $item) {
