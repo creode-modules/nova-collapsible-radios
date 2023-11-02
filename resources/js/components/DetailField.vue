@@ -19,7 +19,7 @@ export default {
 
   computed: {
     fullHierarchyName() {
-      // To find the full path for the folder with ID 9
+      // To find the full path for the folder.
       return buildHierarchyPath(this.field.options, this.field.value);
     }
   },
