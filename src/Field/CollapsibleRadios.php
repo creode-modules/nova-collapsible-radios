@@ -15,28 +15,25 @@ class CollapsibleRadios extends Field
     public $component = 'collapsible-radios';
 
     /**
-     * The field's options callback.
+     * The field's options Array.
      *
-     * @var array<string|int, array<string, mixed>|string>|\Closure|callable|\Illuminate\Support\Collection|null
-     *
-     * @phpstan-var TOption|(callable(): (TOption))|(\Closure(): (TOption))|null
+     * @var array
      */
-    public $optionsCallback;
+    public $optionsArray;
 
     /**
      * Set the options for the select menu.
      *
-     * @param  array<string|int, array<string, mixed>|string>|\Closure|callable|\Illuminate\Support\Collection  $options
-     * @return $this
+     * @param array $options
      *
-     * @phpstan-param TOption|(callable(): (TOption))|(\Closure(): (TOption)) $options
+     * @return self
      */
     public function options($options)
     {
         $radioHelper = app(RadioHelper::class);
         $structuredOptions = $radioHelper::createMultidimensionalStructure($options);
 
-        $this->optionsCallback = $structuredOptions;
+        $this->optionsArray = $structuredOptions;
 
         return $this;
     }
@@ -64,6 +61,6 @@ class CollapsibleRadios extends Field
     protected function serializeOptions()
     {
         /** @var TOption $options */
-        return value($this->optionsCallback);
+        return value($this->optionsArray);
     }
 }
