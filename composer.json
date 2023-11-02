@@ -1,5 +1,5 @@
 {
-    "name": "creode/collapsible-radios",
+    "name": "creode/nova-collapsible-radios",
     "description": "A single select collapsible radio button module for Laravel Nova.",
     "keywords": [
         "laravel",
