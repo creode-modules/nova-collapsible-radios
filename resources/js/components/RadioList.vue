@@ -23,12 +23,11 @@
 </template>
 
 <script>
-
 import some from 'lodash/some';
 import isNil from 'lodash/isNil';
 
-import ExpandIcon from './ExpandIcon.vue';
-import CollapseIcon from './CollapseIcon.vue';
+import ExpandIcon from './Icons/ExpandIcon.vue';
+import CollapseIcon from './Icons/CollapseIcon.vue';
 
 export default {
   props: ['options', 'attribute', 'selected'],
