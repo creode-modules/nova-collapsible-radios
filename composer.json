@@ -1,0 +1,36 @@
+{
+    "name": "creode/collapsible-radios",
+    "description": "A Laravel Nova field.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/nova": ">=4.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Creode\\CollapsibleRadios\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Creode\\CollapsibleRadios\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
