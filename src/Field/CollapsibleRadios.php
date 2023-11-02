@@ -42,9 +42,7 @@ class CollapsibleRadios extends Field
     }
 
     /**
-     * Prepare the field for JSON serialization.
-     *
-     * @return array<string, mixed>
+     * {@inheritdoc}
      */
     public function jsonSerialize(): array
     {
