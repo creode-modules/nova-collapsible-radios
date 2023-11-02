@@ -17,7 +17,7 @@
                 <CollapseIcon />
             </button>
 
-            <RadioList :options="option.children" :attribute="attribute" v-if="option.children.length" v-show="isExpanded(option.value)" @change="handleChange" :selected="selected" @triggerExpand="triggerExpand"></RadioList>
+            <RadioList :options="option.children" :attribute="attribute" v-if="option.children.length" v-show="isExpanded(option.value)" @change="handleChange" :selected="selected" @optionSelected="expand"></RadioList>
         </li>
     </ul>
 </template>
@@ -41,7 +41,7 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
-      if (this.optionsContainSelectedValue(this.options)) {
+      if (this.optionsContainSelectedValue()) {
         this.expandParents();
       }
     })
@@ -84,20 +84,20 @@ export default {
       this.expandedOptions.push(optionId);
     },
 
-    optionsContainSelectedValue(options) {
-      return some(options, option => option.value == this.selected);
+    optionsContainSelectedValue() {
+      return some(this.options, option => option.value == this.selected);
     },
 
     expandParents() {
       // Loop through the options, if one is selected trigger an expand.
       this.options.forEach(option => {
         if (option.value == this.selected) {
-          this.$emit('triggerExpand', option.parent_id);
+          this.$emit('optionSelected', option.parent_id);
         }
       });
     },
 
-    triggerExpand(optionId) {
+    expand(optionId) {
       this.options.forEach(option => {
         if (option.value != optionId) {
           return;
@@ -109,7 +109,7 @@ export default {
           return;
         }
 
-        this.$emit('triggerExpand', option.parent_id);
+        this.$emit('optionSelected', option.parent_id);
       });
     }
   },
