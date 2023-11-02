@@ -64,12 +64,6 @@ class CollapsibleRadios extends Field
     protected function serializeOptions()
     {
         /** @var TOption $options */
-        $options = value($this->optionsCallback);
-
-        if (is_callable($options)) {
-            $options = $options();
-        }
-
-        return $options;
+        return value($this->optionsCallback);
     }
 }
