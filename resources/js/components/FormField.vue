@@ -27,6 +27,9 @@ export default {
     if (!isNil(this.field.value)) {
       this.expandSelectedOptions();
     }
+
+    this.addBlankRadioButton();
+
   },
 
   data: () => ({
@@ -37,6 +40,16 @@ export default {
   methods: {
     fieldDefaultValue() {
       return null;
+    },
+
+    // Add 'none' to field.options array
+    addBlankRadioButton() {
+        this.field.options.unshift({
+            label: '- None -',
+            value: null,
+            parent_id: null,
+            children: [],
+        });
     },
 
     /*
