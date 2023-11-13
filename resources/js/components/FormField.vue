@@ -28,7 +28,9 @@ export default {
       this.expandSelectedOptions();
     }
 
-    this.addBlankRadioButton();
+    if(this.field.nullable){
+      this.addBlankRadioButton();
+    }
 
   },
 
@@ -44,14 +46,12 @@ export default {
 
     // Add 'none' to field.options array
     addBlankRadioButton() {
-        if(this.field.nullable){
-            this.field.options.unshift({
-                label: '- None -',
-                value: null,
-                parent_id: null,
-                children: [],
-            });
-        }
+        this.field.options.unshift({
+            label: '- None -',
+            value: null,
+            parent_id: null,
+            children: [],
+        });
     },
 
     /*
