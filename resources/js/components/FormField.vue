@@ -44,12 +44,14 @@ export default {
 
     // Add 'none' to field.options array
     addBlankRadioButton() {
-        this.field.options.unshift({
-            label: '- None -',
-            value: null,
-            parent_id: null,
-            children: [],
-        });
+        if(this.field.nullable){
+            this.field.options.unshift({
+                label: '- None -',
+                value: null,
+                parent_id: null,
+                children: [],
+            });
+        }
     },
 
     /*
